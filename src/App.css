@@ -37,8 +37,14 @@
   padding-top: 1rem;
 }
 
+/* .carousel .carousel-item {
+  width: 40%;
+  height: 80%;
+} */
+
 .carousel .carousel-item {
-  width: 550px !important;
+  width: 80%;
+  height: 100%;
 }
 
 .link {
