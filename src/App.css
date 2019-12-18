@@ -1,31 +1,76 @@
 .App {
   text-align: center;
+  background-color: #7fa172c5;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.about{
+  text-align: center;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 3rem;
+  padding: .5rem;
+  font-size: 2rem;
+  border-top: 1px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.description{
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  margin: 3rem;
+  padding: .5rem;
+  font-size: 2rem;
+  border-top: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.blurb{
+  background: url('./img/header.jpeg') no-repeat center center fixed; 
+  margin: 0;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  resize: none;
+  padding-top: 1rem;
+}
+
+.carousel .carousel-item {
+  width: 550px !important;
+}
+
+.link {
+  padding: .5rem;
+  color: rgb(59, 119, 199);
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.spacer {
+  height: 3rem;
+  width: 100%;
+}
+
+.projectName{
+  font-family: 'Merriweather', serif;
+  text-align: left;
+  padding-left: 2.5rem;
+}
+
+.header{
+  font-family: 'Merriweather', serif;
+  text-align: center;
+}
+
+.skills {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
