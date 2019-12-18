@@ -11,6 +11,7 @@ import jtAddNote from './img/jtAddNote.png';
 import wpHome from './img/wpHome.png';
 import wpProfile from './img/wpProfile.png'
 import wpPrompt from './img/wpPrompt.png'
+import resume from './img/resume.pdf'
 import './App.css';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <header>
       {/* <div className="spacer"></div>  */}
         <div className="blurb" overflow="hidden">
-          <h1 className="header"> Ari Greif!! </h1>
+          <h1 className="header"> Ari Greif </h1>
           <div className="about">
             Full Stack Developer <br/>
             I am a Seattle based web developer shifting from studying Psychology into a career in software.
@@ -34,7 +35,7 @@ function App() {
             <a className="link" href="https://github.com/AriG150" target="_blank" rel="noopener noreferrer">
               <i class="fa fa-github fa-3x"></i>
             </a>
-            <a className="link" href="mailto: arigreif@gmail.com" target="_blank" rel="noopener noreferrer">
+            <a className="link" href={resume} target="_blank" rel="noopener noreferrer">
             <i class="fa fa-file fa-3x"> </i>
             </a>
             <a className="link" href="mailto: arigreif@gmail.com" target="_blank" rel="noopener noreferrer">
@@ -183,7 +184,7 @@ function App() {
               <a className="link" href="https://github.com/AriG150" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-github fa-1x"></i>
               </a>
-              <a className="link" href="mailto:arigreif@gmail.com" target="_blank" rel="noopener noreferrer">
+              <a className="link" href={resume} target="_blank" rel="noopener noreferrer">
               <i class="fa fa-file fa-1x"> </i>
               </a>
               <a className="link" href="mailto: arigreif@gmail.com" target="_blank" rel="noopener noreferrer">
