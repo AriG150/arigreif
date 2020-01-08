@@ -4,7 +4,8 @@
 }
 
 .about{
-  background-color: rgba(248, 239, 239, 0.801);
+  background-color: rgba(248, 239, 239, 0.609);
+  border-radius: .5rem;
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 3rem;
