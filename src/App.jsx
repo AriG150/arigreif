@@ -20,7 +20,7 @@ function App() {
       <header>
       {/* <div className="spacer"></div>  */}
         <div className="blurb" overflow="hidden">
-          <h1 className="header"> Ari Greif!@ </h1>
+          <h1 className="header"> Ari Greif </h1>
           {/* <div className="about">
             Full Stack Developer <br/>
             I am a Seattle based web developer shifting from studying Psychology into a career in software.
@@ -28,7 +28,7 @@ function App() {
             code, work in cross-functional teams, and approach technical problems.  <br/>
             Please scroll to see my projects and skills
           </div> */}
-          <CardPanel className="white">
+          <CardPanel className="purple">
             <span>
             Full Stack Developer <br/>
             I am a Seattle based web developer shifting from studying Psychology into a career in software.
