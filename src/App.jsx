@@ -21,7 +21,7 @@ function App() {
       {/* <div className="spacer"></div>  */}
         <div className="blurb" overflow="hidden">
           <h1 className="header"> Ari Greif </h1>
-          <CardPanel className="white less">
+          <CardPanel className="about">
             <span>
             Full Stack Developer <br/>
             I am a Seattle based web developer shifting from studying Psychology into a career in software.
