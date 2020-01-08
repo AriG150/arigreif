@@ -20,7 +20,7 @@ function App() {
       <header>
       {/* <div className="spacer"></div>  */}
         <div className="blurb" overflow="hidden">
-          <h1 className="header"> Ari Greif! </h1>
+          <h1 className="header"> Ari Greif!@ </h1>
           {/* <div className="about">
             Full Stack Developer <br/>
             I am a Seattle based web developer shifting from studying Psychology into a career in software.
@@ -58,9 +58,9 @@ function App() {
           <div className="project">
             <h3 className="projectName">Job Tracker</h3>
             <div className="description"> 
-              Ever thought you should keep track of your life goals instead of having them float around in your head? Adventure Awaits
-              is a full stack application where users can organize their goals via categories, and then upload photos and take notes
-              on that activity. 
+            About to launch your job search and concerned about how you'll keep track of your applications? Job Tracker
+              is a full stack application where users can track if they've submitted a resume and cover letter, if they've talked to 
+              a recruiter and had an informational interview, and save their notes on those conversations. 
               <br/>
               Technology Used: MongoDB | Mongoose.js | Express.js | React Hooks | Node | HTML | CSS
             </div>
