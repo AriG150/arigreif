@@ -3,7 +3,7 @@
   background-color: #7fa172c5;
 }
 
-.about{
+.white{
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 3rem;
@@ -80,11 +80,3 @@
   flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
