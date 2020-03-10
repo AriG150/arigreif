@@ -4,24 +4,20 @@
 }
 
 .about{
-  background-color: rgba(248, 239, 239, 0.609);
+  background-color: rgba(248, 239, 239, 0.513);
   border-radius: .5rem;
   text-align: center;
   font-family: 'Source Sans Pro', sans-serif;
   margin: 3rem;
   padding: .5rem;
   font-size: 2rem;
-  /* border-top: 1px solid black; */
 }
 
-.description{
-  font-family: 'Source Sans Pro', sans-serif;
-  text-align: left;
-  margin: 3rem;
+.aboutMeLink {
   padding: .5rem;
-  font-size: 2rem;
-  border-top: 1px solid black;
+  color: rgb(101, 206, 205);
 }
+
 
 .blurb{
   background: url('./img/header.jpeg') no-repeat center center fixed; 
@@ -33,10 +29,18 @@
   background-repeat: no-repeat;
   background-position: bottom;
   text-align: center;
-  height: 100vh;
-  width: 100vw;
   resize: none;
   padding-top: 1rem;
+  padding-bottom: 23vh;
+}
+
+.description{
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  margin: 3rem;
+  padding: .5rem;
+  font-size: 2rem;
+  border-top: 1px solid black;
 }
 
 /*  for full screen. 
@@ -50,9 +54,9 @@
   height: 100%;
 }
 
-.link {
-  padding: .5rem;
-  color: rgb(59, 119, 199);
+.header{
+  font-family: 'Merriweather', serif;
+  text-align: center;
 }
 
 .icons {
@@ -61,9 +65,14 @@
   padding: 5rem;
 }
 
-.spacer {
-  height: 3rem;
-  width: 100%;
+.list-head {
+  padding-bottom: vh;
+}
+
+.link {
+  margin-top: .5rem;
+  padding: .5rem;
+  color: rgb(59, 119, 199);
 }
 
 .projectName{
@@ -72,13 +81,22 @@
   padding-left: 2.5rem;
 }
 
-.header{
-  font-family: 'Merriweather', serif;
-  text-align: center;
+.spacer {
+  height: 2rem;
+  width: 100%;
 }
 
 .skills {
   display: flex;
+  flex-direction: row;
+  column-count: 2;
+}
+
+.skill-col {
+  display: flex;
   flex-direction: column;
+  text-align: center;
+  width: 70%;
+  padding-top: 1rem;
 }
 
