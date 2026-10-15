@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Ari Greif is a product designer and design engineer in Seattle. Five years at Meta carrying work from prototype into production code.">
+<title>Ari Greif</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<style>
+/* Layout: one 760px reading column under a fixed, blurred nav. Sections alternate
+   between the ground and a white surface. Cards are reserved for things you can
+   open or compare: projects, decisions, outcomes. */
+:root{
+  --bg:#FAF9F7; --surface:#FFFFFF; --text:#1C1917; --muted:#6B6460; --border:#E8E3DF;
+  --accent:#7A2E3A; --accent-light:#F6ECED; --accent-line:#E6CDD0;
+  --fill:#FBEFB9; --fill-ink:#5C4A00;
+  --display:'Schibsted Grotesk','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --body:'Source Sans 3',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --radius:12px; --max-w:760px; --nav-h:60px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.65}
+h1,h2,h3,h4,p,dl,dd,ul,figure{margin:0}
+h1,h2,h3,h4{font-family:var(--display);color:var(--text);text-wrap:balance}
+h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.12}
+h2{font-size:clamp(1.4rem,3vw,1.8rem);font-weight:700;letter-spacing:-.02em;line-height:1.25}
+h3{font-size:1.08rem;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+p{color:var(--muted);text-wrap:pretty}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+img,video,svg{max-width:100%}
+.container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 24px}
+.band{padding-block:88px;scroll-margin-top:var(--nav-h)}
+.band.surface{background:var(--surface)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding-top:env(safe-area-inset-top,0px);
+  background:rgba(250,249,247,.86);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-color:var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--nav-h)}
+.nav-logo{font-family:var(--display);font-weight:700;font-size:1rem;color:var(--text);letter-spacing:-.01em}
+.nav-logo:hover{text-decoration:none}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav-links a{font-size:.92rem;font-weight:600;color:var(--muted);transition:color .15s}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+
+/* shared pieces */
+.section-label{font-family:var(--display);font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.section-head{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 22px;border-radius:8px;border:1.5px solid transparent;
+  font-family:var(--display);font-size:.9rem;font-weight:600;cursor:pointer;transition:opacity .15s,transform .15s}
+.btn:hover{opacity:.88;text-decoration:none;transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-secondary{background:var(--surface);color:var(--text);border-color:var(--border)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:var(--accent-light);color:var(--accent);font-size:.82rem;font-weight:600;padding:4px 12px;border-radius:999px}
+.lock{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:var(--muted)}
+.lock svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.fill{background:var(--fill);color:var(--fill-ink);padding:0 .25em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.fill::before{content:"\270E\00a0"}
+
+/* home: hero */
+.hero{padding-block:calc(var(--nav-h) + 96px) 104px}
+.hero-content{display:flex;flex-direction:column;gap:20px}
+.hero-title span{display:block}
+.hero-sub{font-size:1.18rem;max-width:540px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+
+/* home: about */
+.about-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:start}
+.about-text{display:flex;flex-direction:column;gap:14px}
+.about-side{display:flex;flex-direction:column;gap:12px}
+
+/* home: projects */
+.projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.projects-grid .card:first-child{grid-column:1/-1}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;
+  display:flex;flex-direction:column;gap:10px;color:inherit;transition:box-shadow .2s,transform .2s,border-color .2s}
+.card:hover{box-shadow:0 8px 32px rgba(28,25,23,.07);transform:translateY(-2px);text-decoration:none;border-color:var(--accent-line)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.card-tag{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.card p{font-size:.97rem;flex:1 1 auto}
+.card-arrow{font-family:var(--display);font-size:.85rem;font-weight:600;color:var(--accent);margin-top:4px}
+.projects-note{margin-top:24px;font-size:.92rem;max-width:60ch}
+
+/* home: contact */
+.contact-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.contact-inner p{max-width:470px}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.contact-email{font-size:1.05rem;font-weight:600;color:var(--text);user-select:all}
+footer{text-align:center;padding:24px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--border)}
+
+/* case study */
+.page-body{padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px))}
+.back-link{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-size:.88rem;font-weight:600;color:var(--muted);padding-top:32px;transition:color .15s}
+.back-link:hover{color:var(--text);text-decoration:none}
+.project-header{display:flex;flex-direction:column;gap:16px;padding-block:36px 48px;border-bottom:1px solid var(--border)}
+.project-desc{font-size:1.14rem;max-width:580px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:8px}
+.facts div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.facts dt{font-family:var(--display);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.facts dd{font-size:.95rem;color:var(--text)}
+
+.gate{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:32px;margin-block:48px;
+  display:flex;flex-direction:column;gap:14px}
+.gate h2{font-size:1.25rem}
+.gate form{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.gate input{font:inherit;font-size:1rem;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text);flex:1 1 220px;min-width:0}
+.gate .err{color:var(--accent);font-size:.92rem;font-weight:600;min-height:1.3em}
+.gate .addr{color:var(--text);font-weight:600;user-select:all}
+
+article{display:flex;flex-direction:column;gap:48px;padding-block:48px 72px}
+article section{display:flex;flex-direction:column;gap:14px;scroll-margin-top:calc(var(--nav-h) + 12px)}
+article section>h2{font-size:1.15rem;letter-spacing:-.01em}
+article p{line-height:1.75}
+article p strong{color:var(--text);font-weight:600}
+article em{font-style:italic}
+figure{display:flex;flex-direction:column;gap:10px}
+figure img,figure video{width:100%;display:block;border-radius:var(--radius);border:1px solid var(--border);background:var(--border)}
+figcaption{font-size:.84rem;color:var(--muted);text-align:center;font-style:italic}
+.decision{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;
+  display:flex;flex-direction:column;gap:18px}
+.decision .txt{display:flex;flex-direction:column;gap:8px}
+.decision .txt p{font-size:.98rem}
+.decision .aside{font-family:var(--display);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.metrics div{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.metrics b{font-family:var(--display);font-weight:700;font-size:1.9rem;letter-spacing:-.03em;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.metrics span{font-size:.88rem;color:var(--muted);line-height:1.45}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.compare{width:100%;min-width:520px;border-collapse:collapse;font-size:.92rem}
+.compare th,.compare td{text-align:left;padding:10px 14px 10px 0;border-bottom:1px solid var(--border);vertical-align:top}
+.compare th{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text)}
+.compare td{color:var(--text)}
+.compare td:first-child{color:var(--muted)}
+.list{display:flex;flex-direction:column;gap:10px;padding:0;list-style:none}
+.list li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;color:var(--muted)}
+.list li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:.72em}
+.diagram{display:block;width:100%;min-width:640px;height:auto}
+.project-nav{border-top:1px solid var(--border);padding-block:40px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
+.project-nav-link{display:flex;flex-direction:column;gap:4px;min-width:0}
+.project-nav-link span{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.project-nav-link strong{font-family:var(--display);font-size:.98rem;color:var(--text);font-weight:600}
+.project-nav-link:hover{text-decoration:none}
+.project-nav-link:hover strong{color:var(--accent)}
+.project-nav-link.right{text-align:right}
+[hidden]{display:none!important}
+
+@media (max-width:640px){
+  .band{padding-block:64px}
+  .hero{padding-block:calc(var(--nav-h) + 56px) 72px}
+  .about-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+  .projects-grid{grid-template-columns:minmax(0,1fr)}
+  .nav-links{gap:18px}
+  .facts{grid-template-columns:minmax(0,1fr);gap:12px}
+  .metrics{grid-template-columns:minmax(0,1fr)}
+  .project-nav{flex-direction:column}
+  .project-nav-link.right{text-align:left}
+  .gate{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="nav" id="navbar"><div class="container nav-inner"><a class="nav-logo" href="#top">Ari Greif</a><ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div></nav>
+<main id="top">
+<section class="hero"><div class="container hero-content">
+  <p class="section-label">Product designer · Design engineer · Seattle</p>
+  <h1 class="hero-title"><span>Hi, I'm Ari.</span><span>I design the interaction, then write the code that ships it.</span></h1>
+  <p class="hero-sub">Five years at Meta carrying work from Figma and Origami prototypes into production, from zero-to-one features to systems that span a whole app.</p>
+  <div class="hero-ctas"><a class="btn btn-primary" href="#projects">View My Work</a><a class="btn btn-secondary" href="assets/Ari-Greif-Resume.pdf">Resume (PDF)</a><a class="btn btn-secondary" href="#contact">Get in Touch</a></div>
+</div></section>
+
+<section class="band surface" id="about"><div class="container">
+  <div class="section-head"><p class="section-label">About Me</p><h2>A little background</h2></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a product designer and design engineer. I work in the space between design and engineering, where edge cases, failure states, and infrastructure limits either get resolved or get lost at handoff. I close that gap by carrying my own designs into production code.</p>
+      <p>I studied psychology at Willamette University, then completed General Assembly's software engineering immersive. I joined Meta in 2021 as a product design prototyper on Facebook's creator tools, and moved into design engineering in 2023, shipping zero-to-one features in the company's project management tool.</p>
+      <p>I'm excited to bring emerging technologies, AI tools especially, into how I design and build, because they shorten the distance between an idea and something a person can use. Faster iteration gives me more time with engineers, researchers, and product partners, and that time is where a product gets better and more accessible.</p>
+    </div>
+    <div class="about-side"><h3>Skills &amp; Tools</h3><div class="pills"><span class="pill">Figma</span><span class="pill">Origami Studio</span><span class="pill">Interaction design</span><span class="pill">Prototyping</span><span class="pill">Design systems</span><span class="pill">Accessibility</span><span class="pill">User research</span><span class="pill">Usability testing</span><span class="pill">React</span><span class="pill">React Native</span><span class="pill">GraphQL</span><span class="pill">SQL</span><span class="pill">Hack / PHP</span><span class="pill">HTML / CSS</span><span class="pill">JavaScript</span></div></div>
+  </div>
+</div></section>
+
+<section class="band" id="projects"><div class="container">
+  <div class="section-head"><p class="section-label">Work</p><h2>Selected projects</h2></div>
+  <div class="projects-grid">
+<a class="card" href="roles-expectations.html"><span class="card-top"><span class="card-tag">Meta · Internal tools</span><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Password</span></span><h3>Roles &amp; Expectations</h3><p>Gave every project in Meta's company-wide project tool a record of who is accountable for what. Zero to one, from the brief to production code, with 124K+ uses in the first quarter.</p><span class="card-arrow">View Case Study &rarr;</span></a>
+<a class="card" href="project-landing-page.html"><span class="card-top"><span class="card-tag">Meta · Internal tools</span><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Password</span></span><h3>Project Landing Page</h3><p>Diagnosed why designers ran their projects outside the tool, co-wrote the brief that brought another org in, and shipped the fix. Setup went from five clicks to one.</p><span class="card-arrow">View Case Study &rarr;</span></a>
+<a class="card" href="reels-creation.html"><span class="card-top"><span class="card-tag">Meta · Facebook</span><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Password</span></span><h3>Reels Creation</h3><p>Prototypes that surfaced the edge cases static comps hid, and got Facebook and Instagram onto one approach to the creation timeline.</p><span class="card-arrow">View Case Study &rarr;</span></a>
+  </div>
+  <p class="projects-note">These case studies show internal Meta tools, so each opens with a password. If you're reviewing an application, it's in my note to you. Otherwise, email me and I'll send it.</p>
+</div></section>
+
+<section class="band surface" id="contact"><div class="container contact-inner">
+  <p class="section-label">Contact</p>
+  <h2>Let's work together</h2>
+  <p>Hiring for product design or design engineering, or want the case study password? My inbox is open.</p>
+  <p class="contact-email">arigreif@gmail.com</p>
+  <div class="contact-links"><a class="btn btn-primary" href="mailto:arigreif@gmail.com">Send an Email</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/arigreif/">LinkedIn</a></div>
+</div></section>
+</main>
+<footer>&copy; 2026 Ari Greif</footer>
+<script>
+(function(){var n=document.getElementById('navbar');function f(){n.classList.toggle('scrolled',window.scrollY>8)}
+f();window.addEventListener('scroll',f,{passive:true})})();
+</script>
+</body>
+</html>
