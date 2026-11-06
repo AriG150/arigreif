@@ -78,7 +78,7 @@ img,video,svg{max-width:100%}
 
 /* home: projects */
 .projects-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.projects-grid .card:first-child{grid-column:1/-1}
+.projects-grid .card:first-child,.projects-grid .card:last-child:nth-child(even){grid-column:1/-1}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;
   display:flex;flex-direction:column;gap:10px;color:inherit;transition:box-shadow .2s,transform .2s,border-color .2s}
 .card:hover{box-shadow:0 8px 32px rgba(28,25,23,.07);transform:translateY(-2px);text-decoration:none;border-color:var(--accent-line)}
@@ -194,6 +194,7 @@ figcaption{font-size:.84rem;color:var(--muted);text-align:center;font-style:ital
 <a class="card" href="roles-expectations.html"><span class="card-top"><span class="card-tag">Meta · Internal tools</span><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Password</span></span><h3>Roles &amp; Expectations</h3><p>Gave every project in Meta's company-wide project tool a record of who is accountable for what. Zero to one, from the brief to production code, with 124K+ uses in the first quarter.</p><span class="card-arrow">View Case Study &rarr;</span></a>
 <a class="card" href="project-landing-page.html"><span class="card-top"><span class="card-tag">Meta · Internal tools</span><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Password</span></span><h3>Project Landing Page</h3><p>Diagnosed why designers ran their projects outside the tool, wrote the brief that brought another org in, and shipped the fix. Setup went from five clicks to one.</p><span class="card-arrow">View Case Study &rarr;</span></a>
 <a class="card" href="reels-creation.html"><span class="card-top"><span class="card-tag">Meta · Facebook</span><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Password</span></span><h3>Reels Creation</h3><p>Prototypes that surfaced the edge cases static comps hid, and got Facebook and Instagram onto one approach to the creation timeline.</p><span class="card-arrow">View Case Study &rarr;</span></a>
+<a class="card" href="dsp-manager.html"><span class="card-top"><span class="card-tag">Meta · Design system</span><span class="lock"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Password</span></span><h3>Design System Platform – Theme Switcher</h3><p>A tool that let designers change a component's design tokens and preview the result in a theme, with no code access and no engineering handoff.</p><span class="card-arrow">View Case Study &rarr;</span></a>
   </div>
   <p class="projects-note">These case studies show internal Meta tools, so each opens with a password. If you're reviewing an application, it's in my note to you. Otherwise, email me and I'll send it.</p>
 </div></section>
